@@ -1,4 +1,4 @@
-$loader.load([
+$JSAsync.load([
 	{
 		"key": "jquery",
 		"includes": [

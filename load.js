@@ -1,4 +1,4 @@
-var $loader = {
+var $JSAsync = {
 	modules:{},
 	module: function (attr) { 
 	
@@ -63,13 +63,6 @@ var $loader = {
 		
 		// Initialize Module
 		self.load();
-	},
-	
-	loaded: function () {
-		var modules = [];
-		var i = 0;
-		while (i < this.modules.length) { modules[i] = this.modules[i].data.key; i++; }
-		return modules;
 	},
 	
 	load: function (module) { 
