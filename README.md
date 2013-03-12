@@ -1,4 +1,4 @@
-# Async Loader
+# JSAsync Loader
 
 A simple asynchronous tool for loading and managing third-party javascript snippets.
 
