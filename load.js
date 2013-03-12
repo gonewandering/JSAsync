@@ -8,11 +8,11 @@ var $JSAsync = {
 		self.data = { 	
 			key: null,					// Default Attributes for module
 			active: 1,					// Checks whether the item is active
-			ready: 0,
-			sample: .8,					// Percent of the time that it gets run
+			sample: 1,					// Percent of the time that it gets run
 			includes: [],				// External script includes
-			scripts: 0, 				// Returns the number of loaded scripts
-			complete: null				// Callback actions after scripts have been loaded
+			complete: null,				// Callback actions after scripts have been loaded
+			
+			ready: 0,
 		}
 		
 		// Add attributes to module
