@@ -12,7 +12,8 @@ var $JSAsync = {
 			includes: [],				// External script includes
 			complete: null,				// Callback actions after scripts have been loaded
 			
-			ready: 0,
+			ready: 0,					// Do not change these
+			scripts:0
 		}
 		
 		// Add attributes to module
@@ -36,8 +37,8 @@ var $JSAsync = {
 								if (typeof(self.data.complete) == "function"){
 									self.data.complete();
 								} else {
-									var complete = new Function(self.data.complete);
-									complete();
+									self.data.complete = new Function(self.data.complete);
+									self.data.complete();
 								}
 								self.ready = true;
 							} 
@@ -48,15 +49,15 @@ var $JSAsync = {
 					i++;
 				}
 			} else { 
-				if (typeof(self.data.complete) == "function"){
+				if (typeof(self.data.complete) == "function") {
 					self.data.complete();
 				} else {
-					var complete = new Function(self.data.complete);
-					complete();
+					self.data.complete = new Function(self.data.complete);
+					self.data.complete();
 				}
 				self.ready = true;			
 			}
-		}
+		};
 		
 		// Log the module for debuggin
 		this.log = function () { window.console.log(this); };

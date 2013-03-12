@@ -4,7 +4,7 @@ $JSAsync.load([
 		"includes": [
 			"http://code.jquery.com/jquery-1.9.1.min.js"
 		],
-		"complete": "$('document').ready(function () { $('body').css('background', 'black'); });"
+		"complete": "$(document).ready(function () { $('body').css('background', 'black'); });"
 	},
 	{
 		"key": "google-analytics",
