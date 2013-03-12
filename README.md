@@ -14,7 +14,7 @@ The key used to identify this object if you ever need to reinitialize it
 ### obj.includes (optional)
 An array of urls targeting the scripts to load, ex.  http://code.jquery.com/jquery-1.9.1.min.js
 
-### obj.active (optional)
+### obj.active (optional, defaults 1)
 Binary item that determines if the script is active. Defaults to 1.
 
 ### obj.sample (optional, defaults 1)
