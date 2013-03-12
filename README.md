@@ -1,4 +1,4 @@
-# JSAsync Loader
+# JSAsync Loader V0.1
 
 A simple asynchronous tool for loading and managing third-party javascript snippets.
 
