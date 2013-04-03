@@ -25,19 +25,21 @@ Either a function or a string representing some javascript that will be evaluate
 
 The following is a simple configuration that loads jquery and google analytics:
 
-      $JSAsync = [{
-        // Add Jquery & bootstrap.js and print 'Good work!' when done
-        {
-      		"key": "jquery",
-      		"includes": ["http://code.jquery.com/jquery-1.9.1.min.js", "libs/bootstrap.min.js"],
-      		"complete": function () { $('document').ready(function () { $('body').append('Good work!'); }); }
-      	},
-        
-        // Load Google Analytics (already additional scripts loaded by complete)
-      	{
-      		"key": "google-analytics",
-      		"complete": "var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-XXXXX-X']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();"
-      	}
-      }];
+      $JSAsync(
+            [{
+                // Add Jquery & bootstrap.js and print 'Good work!' when done
+                {
+              		"key": "jquery",
+              		"includes": ["http://code.jquery.com/jquery-1.9.1.min.js", "libs/bootstrap.min.js"],
+              		"complete": function () { $('document').ready(function () { $('body').append('Good work!'); }); }
+              	},
+                
+                // Load Google Analytics (Using string/json vers of complete func 
+              	{
+              		"key": "google-analytics",
+              		"complete": "var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-XXXXX-X']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })();"
+              	}
+          }]
+      );
     
 You can add the $JSAsync array anywhere on the page, or include it externally. 
